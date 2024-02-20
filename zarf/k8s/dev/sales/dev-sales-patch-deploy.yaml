@@ -88,7 +88,5 @@ spec:
         resources:
           requests:
             cpu: "250m" # I need access to 1/4 of a core on the node.
-            mamory: 500Mi
           limits:
             cpu: "250m" # Execute instructions 25ms/100ms on my 1 core.
-            mamory: 500Mi
