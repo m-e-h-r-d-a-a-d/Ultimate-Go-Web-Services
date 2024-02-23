@@ -6,6 +6,9 @@ github.com/ardanlabs/conf/v3
 github.com/arl/statsviz
 github.com/arl/statsviz/internal/plot
 github.com/arl/statsviz/internal/static
+# github.com/dimfeld/httptreemux/v5 v5.5.0
+## explicit; go 1.9
+github.com/dimfeld/httptreemux/v5
 # github.com/go-json-experiment/json v0.0.0-20231102232822-2e55bd4e08b0
 ## explicit; go 1.21
 github.com/go-json-experiment/json
