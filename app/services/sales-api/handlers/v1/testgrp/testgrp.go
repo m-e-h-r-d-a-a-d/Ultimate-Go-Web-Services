@@ -1,12 +1,14 @@
 package testgrp
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 )
 
 // Test our example root
-func Test(w http.ResponseWriter, r *http.Request) {
+// Test is our example route.
+func Test(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
 	// validate data
 	// call into the business layer
 	// return errors
@@ -17,5 +19,5 @@ func Test(w http.ResponseWriter, r *http.Request) {
 	}{
 		Status: "ok",
 	}
-	json.NewEncoder(w).Encode(status)
+	return json.NewEncoder(w).Encode(status)
 }
