@@ -2,8 +2,9 @@ package testgrp
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
+
+	"github.com/m-e-h-r-d-a-a-d/Ultimate-Go-Web-Services/foundation/web"
 )
 
 // Test our example root
@@ -19,5 +20,6 @@ func Test(ctx context.Context, w http.ResponseWriter, r *http.Request) error {
 	}{
 		Status: "ok",
 	}
-	return json.NewEncoder(w).Encode(status)
+
+	return web.Respond(ctx, w, status, http.StatusOK)
 }
