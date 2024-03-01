@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/m-e-h-r-d-a-a-d/Ultimate-Go-Web-Services/app/services/sales-api/handlers/v1/testgrp"
+	"github.com/m-e-h-r-d-a-a-d/Ultimate-Go-Web-Services/business/web/v1/mid"
 	"github.com/m-e-h-r-d-a-a-d/Ultimate-Go-Web-Services/foundation/web"
 	"go.uber.org/zap"
 )
@@ -17,7 +18,7 @@ type APIMuxConfig struct {
 
 // APIMux constructs a http.Handler with all application routes defined.
 func APIMux(cfg APIMuxConfig) *web.App {
-	app := web.NewApp(cfg.Shutdown)
+	app := web.NewApp(cfg.Shutdown, mid.Logger(cfg.Log), mid.Errors(cfg.Log))
 
 	app.Handle(http.MethodGet, "/test", testgrp.Test)
 	return app
